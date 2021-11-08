@@ -8,6 +8,8 @@ The **database** is set up so that the front-end authenticate before accessing t
 
 ## 2. Architecture:
 
+![](images/mongo15.PNG)
+
 ## 3. Software tools used:
 
 * [kubernetes](https://kubernetes.io/)
