@@ -3,7 +3,8 @@
 
 <h2>Welcome to the database assignment repo.</h2>  
 
-- Make a pull request to submit your assignment: 
+![image](https://user-images.githubusercontent.com/60336145/140837762-5ecfc75f-336f-42ab-b80f-2c83008e831d.png)
+[See in diagrams.net](https://drive.google.com/file/d/1-27RjLHwyUy2bCKvpcBuy-iurBjPzVSc/view?usp=sharing)
 
 AIM: Deploy a MongoDB database by using kubernetes and docker on your local machine.
 Tools:
