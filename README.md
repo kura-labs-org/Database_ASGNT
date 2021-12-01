@@ -1,6 +1,6 @@
 # Database_ASGMT
-<h1 align=center>Database assignment</h1>
+<h1 align=center>Database Assignment</h1>
 
-<h2>Welcome to the database assignment repo.</h2>  
+![image](https://github.com/Deodutt/Database_ASGMT/blob/main/documentation/preview.png)
 
-- Make a pull request to submit your assignment: 
+Follow this link to the deployment instructions 👉 [here](https://github.com/Deodutt/Database_ASGMT/blob/main/documentation/Database_ASGMT.pdf)
