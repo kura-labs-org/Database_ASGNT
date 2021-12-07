@@ -17,7 +17,7 @@ The **database** is set up so that the front-end authenticate before accessing t
 We avoid using a cloud provider for the deployment for cost purposes.<br>
 This is not used in a production environment.
 
-## 4. Precedure:
+## 4. Procedure:
 
 **Note**: Avoid pasting the `$` sign; it is not part of the commands. The sign shows up when you use **Linux**.
 
