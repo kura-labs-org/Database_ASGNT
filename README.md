@@ -60,6 +60,27 @@ spec:
       targetPort: 27017
 ```
 
+
+
+# Task 2
+
+# Task 2 Procedure
+1. Type:
+```
+echo -n mongo-root-username | base 64
+```
+
+2. Type
+```
+echo -n mongo-root-password | base 64
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/pictures/echo.png width="1000" />
+     </h1>
+</html> 
+
+
 3. Create a secret.yaml file:
 ```
 apiVersion: v1
@@ -74,32 +95,21 @@ data:
 
 ```
 
-<html>
-     <h1>
-        <img style="float: center;" src=/pictures/twocommands.png width="1000" />
-     </h1>
-</html> 
-
-
-
-# Task 2
-
-# Task 2 Procedure
-1. Type:
-```
-echo -n mongo-root-username | base 64
-```
-
-
-2. Type
-```
-echo -n mongo-root-password | base 64
-```
 
 
 # Task 3
 
 # Task 3 Procedure
+1. Deploy the yaml files:
+```
+kubectl create -f secret.yaml
+kubectl create -f mongodb-deployment.yaml
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/pictures/twocommands.png width="1000" />
+     </h1>
+</html> 
 
 # Task 4
 
