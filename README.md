@@ -267,3 +267,12 @@ localhost:8080
         <img style="float: center;" src=/pictures/add_document.png width="1000" />
      </h1>
 </html> 
+
+# Task 6
+A topology is shown below of what technology was needed and how they are all connected to one another to make a MongoDB database locally
+## Task 6 Topology 
+<html>
+     <h1>
+        <img style="float: center;" src=/pictures/database.png width="1000" />
+     </h1>
+</html> 
