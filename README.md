@@ -1,9 +1,19 @@
 # Database_ASGMT
+For this demonstration, a MongoDB Database will be configured on a local computer. A database is logical storage container that holds a lot of data such as document files. The benefit of using a database is it stores a lot of data in an orgainzed manner where the files that are stored on the database can be easily accessible. <br>
+<br>
+MongoDB is one of the most commonly used document database softwares. Some databases are configured using the SQL programming language but MongoDB is configured using NoSQL. MongoDB is good for querying and indexing documents. The technology that will be used to make a local MongoDB database is Kubernetes. To have Kubernetes on a computer, Docker must also be downloaded.  
 
 # Task 1
+This task a cluster will be created with a specified load balancer. This cluster will hold the MongoDB database and after the cluster's port has been configured in a web browser, the database can be accessed. <br>
+<br>
+Kubernetes reads yaml files. Within the yaml files, a deployment and service can be specified. When Kubernetes reads any yaml file and makes objects from the given yaml files, Kubernetes will always make: <br>
+* Cluster: Is a grouping of many **nodes** <br>
+* Node: Holds **pods** <br>
+* Pod: Hosts an application <br>
+<br>
 
-<h1> Task 1 Procedure </h1>
-1. Create a load balancer:
+## Task 1 Procedure
+1. First a cluster of nodes will be initated by using the k3d command to make a cluster of nodes that is configured to the 8080 port:
 ```
 k3d cluster create mongo -p "8080:8081@loadbalancer"
 ``` 
@@ -13,7 +23,7 @@ k3d cluster create mongo -p "8080:8081@loadbalancer"
      </h1>
 </html> 
 
-2. Create a Mongo deployment yaml file. Below shows the contents that was in the Mongo deployment yaml file:
+2. A Mongo deployment yaml file will be created with the following content in the yaml file:
 ```
 ---
 apiVersion: apps/v1
@@ -59,6 +69,12 @@ spec:
       port: 27017
       targetPort: 27017
 ```
+To use the terminal to make this yaml file, type:
+```
+nano filename.yaml
+```
+* filename can be the name of the yaml file that it is given
+* The following code shown above is in a yaml file
 <html>
      <h1>
         <img style="float: center;" src=/pictures/1.png width="1000" />
@@ -67,14 +83,15 @@ spec:
 
 
 # Task 2
-
-# Task 2 Procedure
-1. Type:
+A database is good to hold data and its always best to make any configured database secured and well protected from any hackers or secuirty threats. During this task, another yaml file will be created to hold our username and password to access the database. If there is no yaml file that holds the set username and password, then the database cannot be accessed. Though this database is configured locally and it seems configuring a yaml file to hold the password and username is not neccessary, this precaution should be considered when creating a database on the web or cloud.  
+## Task 2 Procedure
+1. With the "echo -n .... | base 64" where '....' can be any words, this command encrypts any given words to a phrase of letters and numbers that is used to access the database. <br>
+<br>
+Shown below, the words "mongo-root-username" and "mongo-root-password" are being encrypted:
 ```
 echo -n mongo-root-username | base 64
 ```
 
-2. Type
 ```
 echo -n mongo-root-password | base 64
 ```
@@ -85,7 +102,7 @@ echo -n mongo-root-password | base 64
 </html> 
 
 
-3. Create a secret.yaml file:
+2. Now the secret.yaml file that holds the encrypted username and password can now be created:
 ```
 apiVersion: v1
 kind: Secret
@@ -96,12 +113,17 @@ data:
     mongo-root-username: bW9uZ28tcm9vdC11c2VybmFtZQ==
     mongo-root-password: bW9uZ28tcm9vdC1wYXNzd29yZA==
 ```
-
+To use the terminal to make this yaml file, type:
+```
+nano filename.yaml
+```
+* filename can be the name of the yaml file that it is given
+* The following code shown above is in a yaml file
 
 
 # Task 3
-
-# Task 3 Procedure
+The previous tasks, the yaml files were created to deploy the mongo database along with its username and password being encrypted to increase security. To deploy these yaml files, the kubectl commands are needed in order to store these yaml files on pods and for it communciate with the cluster that was originally created. 
+## Task 3 Procedure
 1. Deploy the yaml files:
 ```
 kubectl create -f secret.yaml
@@ -115,7 +137,7 @@ kubectl create -f mongodb-deployment.yaml
 
 # Task 4
 
-# Task 4 Procedure
+## Task 4 Procedure
 1. Create a config_map.yaml file:
 ```
 apiVersion: v1
@@ -200,7 +222,7 @@ kubectl create -f config_map.yaml
 
 # Task 5 
 
-# Task 5 Procedure
+## Task 5 Procedure
 1. Enter the application by typing into a web browser:
 ```
 localhost:8080
