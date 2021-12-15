@@ -211,18 +211,19 @@ spec:
      </h1>
 </html> 
 
-3. Create the config map and mongo express files on Kubernetes pods:
+3. Create the config map and mongo express files on Kubernetes pods with the kubectl create commands:
 ```
 kubectl create -f config_map.yaml
+```
+```
+kubectl create -f mongodb_express.yaml
 ```
 <html>
      <h1>
         <img style="float: center;" src=/pictures/config_map.png width="1000" />
      </h1>
 </html> 
-```
-kubectl create -f mongodb_express.yaml
-```
+
 <html>
      <h1>
         <img style="float: center;" src=/pictures/commands2.png width="1000" />
