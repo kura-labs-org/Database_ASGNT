@@ -136,6 +136,7 @@ kubectl create -f mongodb-deployment.yaml
 </html> 
 
 # Task 4
+Now a configure map and an mongo express file will be created. A configure map is an API object that other pods in the cluster can use. The mongo deployment file will use the configure map to connect to the mongo express app to deploy the database the mongo express yaml file makes. 
 
 ## Task 4 Procedure
 1. Create a config_map.yaml file:
@@ -210,7 +211,7 @@ spec:
      </h1>
 </html> 
 
-3. Create the config map:
+3. Create the config map and mongo express files on Kubernetes pods:
 ```
 kubectl create -f config_map.yaml
 ```
@@ -219,14 +220,25 @@ kubectl create -f config_map.yaml
         <img style="float: center;" src=/pictures/config_map.png width="1000" />
      </h1>
 </html> 
+```
+kubectl create -f mongodb_express.yaml
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/pictures/commands2.png width="1000" />
+     </h1>
+</html> 
+
 
 # Task 5 
+After connecting each yaml file to Kubernetes' pods, the database can be accessed in an internet browser from the port that was originally set when the cluster was created. 
 
 ## Task 5 Procedure
 1. Enter the application by typing into a web browser:
 ```
 localhost:8080
 ```
+* It is "localhost:8080" since the command "k3d cluster create mongo -p "8080:8081@loadbalancer" configured the load balancer at 8080.
 <html>
      <h1>
         <img style="float: center;" src=/pictures/localhost8080.png width="1000" />
