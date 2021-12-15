@@ -273,6 +273,6 @@ A topology is shown below of what technology was needed and how they are all con
 ## Task 6 Topology 
 <html>
      <h1>
-        <img style="float: center;" src=/pictures/database.png width="1000" />
+        <img style="float: center;" src=/pictures/database.drawio.png width="1000" />
      </h1>
 </html> 
