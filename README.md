@@ -2,7 +2,7 @@
 
 # Task 1
 
-# Task 1 Procedure
+<h1> Task 1 Procedure </h1>
 1. Create a load balancer:
 ```
 k3d cluster create mongo -p "8080:8081@loadbalancer"
@@ -221,7 +221,7 @@ localhost:8080
 3. Click the database test. In a database, collections can be created. To create one, click the blue button "Create Collection" in the top right corner. This tutorial a new collection called "recipe" was made. 
 <html>
      <h1>
-        <img style="float: center;" src=/pictures/createcollection.png width="1000" />
+        <img style="float: center;" src=/pictures/create_collection.png width="1000" />
      </h1>
 </html> 
 
